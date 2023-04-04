@@ -1,8 +1,6 @@
 from date import *
 def is_game_close(): # вернуть необходимость выхода из программы
     return game_close
-def display(): # Отрисовать все объекты
-    pass
 def quit_game(): # Выйти из программы
     quit()
 def event():
@@ -13,8 +11,15 @@ def event():
             game_close = True
 
 def simulation():
-    pass
+    if snake_direction == 'right':
+        snake_head['x'] += 1
+
+def drawSneakHead():
+    pygame.draw.rect(dis, c, (snake_head['x']*10, snake_head['y']*10, 10, 10))
+
 def display():
-    pygame.draw.rect(dis,(255,255,255),(75,75,50,50))
+    drawSneakHead()
     pygame.display.update()
+    dis.fill(black)
+    clock.tick(5)
 

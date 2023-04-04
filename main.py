@@ -4,3 +4,7 @@ while not is_game_close():
     simulation()
     display()
 quit_game()
+
+
+
+
